@@ -1,0 +1,26 @@
+[project]
+name = "try-rye"
+version = "0.1.0"
+description = "Add a short description here"
+authors = [
+    { name = "andmohiko", email = "andmohiko@gmail.com" }
+]
+dependencies = [
+    "fastapi~=0.97.0",
+    "uvicorn~=0.22.0",
+]
+readme = "README.md"
+requires-python = ">= 3.8"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.rye]
+managed = true
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.rye.scripts]
+server = { cmd = "uvicorn main:app --reload" }
